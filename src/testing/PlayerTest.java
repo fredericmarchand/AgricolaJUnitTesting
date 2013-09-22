@@ -7,8 +7,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import agricola.Player;
 
 public class PlayerTest {
+	
+	private static Player player;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +23,7 @@ public class PlayerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		player = new Player();
 	}
 
 	@After
@@ -28,237 +32,301 @@ public class PlayerTest {
 
 	@Test
 	public void testPlayer() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getFood());
+		assertEquals(0, player.getReed());
+		assertEquals(0, player.getWood());
+		assertEquals(0, player.getClay());
+		assertEquals(0, player.getStone());
+		assertEquals(0, player.getGrain());
+		assertEquals(0, player.getVege());
+		assertEquals(2, player.getFamily());
+		assertEquals(2, player.getActiveFamily());
+		assertEquals(2, player.getRooms());
+		assertEquals('w', player.getRoomType());
+		assertEquals(0, player.getSheep());
+		assertEquals(0, player.getCattle());
+		assertEquals(0, player.getBoar());
+		assertEquals(0, player.getField());
+		assertEquals(13, player.getEmpty());
+		assertEquals(0, player.getPasture());
+		assertEquals(0, player.getStable());
+		assertEquals(0, player.getScore());
+		assertEquals(false, player.hasOven());
 	}
 
 	@Test
 	public void testGetScore() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getScore());
 	}
 
 	@Test
 	public void testCalcScore() {
-		fail("Not yet implemented");
+		int expectedScore = 11;
+		/* Setting values for resources that will generate a score */
+		player.addGrain();
+		player.addVege();
+		player.addRooms(3);
+		player.addSheep(4);
+		player.addCattle(2);
+		player.addBoar(1);
+		player.addField();
+		player.addField();
+		player.addPasture(2);
+		player.addStable(2);
+		
+		/* Calculate the player's score */
+		player.calcScore();
+		System.out.println(player.getScore());
+		/* Check that the score is what it is expected to be */
+		assertEquals(expectedScore, player.getScore());
 	}
 
 	@Test
 	public void testAddScore() {
-		fail("Not yet implemented");
+		player.addScore(2);
+		assertEquals(2, player.getScore());
 	}
 
 	@Test
 	public void testHasOven() {
-		fail("Not yet implemented");
+		assertEquals(false, player.hasOven());
 	}
 
 	@Test
 	public void testSetOven() {
-		fail("Not yet implemented");
+		player.setOven();
+		assertEquals(true, player.hasOven());
 	}
 
 	@Test
 	public void testAddField() {
-		fail("Not yet implemented");
+		player.addField();
+		assertEquals(1, player.getField());
 	}
 
 	@Test
 	public void testDecVege() {
-		fail("Not yet implemented");
+		player.decVege();
+		assertEquals(-1, player.getVege());
 	}
 
 	@Test
 	public void testDecGrain() {
-		fail("Not yet implemented");
+		player.decGrain();
+		assertEquals(-1, player.getGrain());
 	}
 
 	@Test
 	public void testGetField() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getField());
 	}
 
 	@Test
 	public void testDecEmpty() {
-		fail("Not yet implemented");
+		player.decEmpty(5);
+		assertEquals(8, player.getEmpty());
 	}
 
 	@Test
 	public void testGetPasture() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getPasture());
 	}
 
 	@Test
 	public void testAddPasture() {
-		fail("Not yet implemented");
+		player.addPasture(3);
+		assertEquals(3, player.getPasture());
 	}
 
 	@Test
 	public void testGetStable() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getStable());
 	}
 
 	@Test
 	public void testAddStable() {
-		fail("Not yet implemented");
+		player.addStable(6);
+		assertEquals(6, player.getStable());
 	}
 
 	@Test
 	public void testGetEmpty() {
-		fail("Not yet implemented");
+		assertEquals(13, player.getEmpty());
 	}
 
 	@Test
 	public void testAddSheep() {
-		fail("Not yet implemented");
+		player.addSheep(7);
+		assertEquals(7, player.getSheep());
 	}
 
 	@Test
 	public void testGetSheep() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getSheep());
 	}
 
 	@Test
 	public void testAddBoar() {
-		fail("Not yet implemented");
+		player.addBoar(3);
+		assertEquals(3, player.getBoar());
 	}
 
 	@Test
 	public void testGetBoar() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getBoar());
 	}
 
 	@Test
 	public void testAddCattle() {
-		fail("Not yet implemented");
+		player.addCattle(2);
+		assertEquals(2, player.getCattle());
 	}
 
 	@Test
 	public void testGetCattle() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getCattle());
 	}
 
 	@Test
 	public void testHasChild() {
-		fail("Not yet implemented");
+		assertEquals(false, player.hasChild());
 	}
 
 	@Test
 	public void testSetChild() {
-		fail("Not yet implemented");
+		boolean value = player.hasChild();
+		player.setChild();
+		assertEquals(!value, player.hasChild());
 	}
 
 	@Test
 	public void testGetRoomType() {
-		fail("Not yet implemented");
+		assertEquals('w', player.getRoomType());
 	}
 
 	@Test
 	public void testSetRoomType() {
-		fail("Not yet implemented");
+		char value = 'c';
+		player.setRoomType(value);
+		assertEquals(value, player.getRoomType());
 	}
 
 	@Test
 	public void testGetFood() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getFood());
 	}
 
 	@Test
 	public void testGetReed() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getReed());
 	}
 
 	@Test
 	public void testGetWood() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getWood());
 	}
 
 	@Test
 	public void testGetClay() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getClay());
 	}
 
 	@Test
 	public void testGetStone() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getStone());
 	}
 
 	@Test
 	public void testGetGrain() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getGrain());
 	}
 
 	@Test
 	public void testGetVege() {
-		fail("Not yet implemented");
+		assertEquals(0, player.getVege());
 	}
 
 	@Test
 	public void testGetFamily() {
-		fail("Not yet implemented");
+		assertEquals(2, player.getFamily());
 	}
 
 	@Test
 	public void testGetRooms() {
-		fail("Not yet implemented");
+		assertEquals(2, player.getRooms());
 	}
 
 	@Test
 	public void testGetActiveFamily() {
-		fail("Not yet implemented");
+		assertEquals(2, player.getActiveFamily());
 	}
 
 	@Test
 	public void testUseFam() {
-		fail("Not yet implemented");
+		player.useFam();
+		assertEquals(1, player.getActiveFamily());
 	}
 
 	@Test
 	public void testResetFam() {
-		fail("Not yet implemented");
+		player.useFam();
+		player.resetFam();
+		assertEquals(2, player.getActiveFamily());
 	}
 
 	@Test
 	public void testAddFood() {
-		fail("Not yet implemented");
+		player.addFood(8);
+		assertEquals(8, player.getFood());
 	}
 
 	@Test
 	public void testAddReed() {
-		fail("Not yet implemented");
+		player.addReed(3);
+		assertEquals(3, player.getReed());
 	}
 
 	@Test
 	public void testAddWood() {
-		fail("Not yet implemented");
+		player.addWood(2);
+		assertEquals(2, player.getWood());
 	}
 
 	@Test
 	public void testAddClay() {
-		fail("Not yet implemented");
+		player.addClay(2);
+		assertEquals(2, player.getClay());
 	}
 
 	@Test
 	public void testAddStone() {
-		fail("Not yet implemented");
+		player.addStone(5);
+		assertEquals(5, player.getStone());
 	}
 
 	@Test
 	public void testAddGrain() {
-		fail("Not yet implemented");
+		player.addGrain();
+		assertEquals(1, player.getGrain());
 	}
 
 	@Test
 	public void testAddVege() {
-		fail("Not yet implemented");
+		player.addVege();
+		assertEquals(1, player.getVege());
 	}
 
 	@Test
 	public void testAddFamily() {
-		fail("Not yet implemented");
+		player.addFamily();
+		assertEquals(true, player.hasChild());
+		assertEquals(3, player.getFamily());
 	}
 
 	@Test
 	public void testAddRooms() {
-		fail("Not yet implemented");
+		player.addRooms(1);
+		assertEquals(3, player.getRooms());
 	}
 
 }
