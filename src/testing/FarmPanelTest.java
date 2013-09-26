@@ -2,13 +2,21 @@ package testing;
 
 import static org.junit.Assert.*;
 
+import javax.swing.JButton;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import agricola.Farm;
+import agricola.FarmPanel;
+import agricola.Space;
+
 public class FarmPanelTest {
+	
+	private static FarmPanel farmPanel;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +28,7 @@ public class FarmPanelTest {
 
 	@Before
 	public void setUp() throws Exception {
+		farmPanel = new FarmPanel(new Farm());
 	}
 
 	@After
@@ -27,18 +36,23 @@ public class FarmPanelTest {
 	}
 
 	@Test
-	public void testFarmPanel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testGetButtons() {
-		fail("Not yet implemented");
+		assertNotNull(farmPanel.getButtons());
+		for (int i = 0; i < farmPanel.getButtons().length; ++i) {
+			for (JButton j: farmPanel.getButtons()[i]) {
+				assertNotNull(j);
+			}
+		}
 	}
 
 	@Test
 	public void testGetFarm() {
-		fail("Not yet implemented");
+		assertNotNull(farmPanel.getFarm());
+		for (int i = 0; i < farmPanel.getFarm().length; ++i) {
+			for (Space s: farmPanel.getFarm()[i]) {
+					assertNotNull(s);
+			}
+		}
 	}
 
 }

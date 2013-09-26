@@ -436,6 +436,7 @@ public class AgricolaController extends JFrame implements  MouseListener, Action
     }
     
     
+	@SuppressWarnings("deprecation")
 	public void actionPerformed(ActionEvent e){
     	
     	if (e.getSource() instanceof JButton){

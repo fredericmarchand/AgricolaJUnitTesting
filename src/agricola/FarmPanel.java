@@ -9,7 +9,7 @@ public class FarmPanel extends JPanel {
 	private JButton[][] b;
 	private Farm s;
 	
-	FarmPanel(Farm stadium){
+	public FarmPanel(Farm stadium){
 		s=stadium;
 		setLayout(new GridBagLayout());
 		setSize(800,600);

@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import agricola.Farm;
+import agricola.Space;
+
 public class FarmTest {
+	
+	private static Farm farm;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -19,21 +24,28 @@ public class FarmTest {
 	}
 
 	@Before
+	
 	public void setUp() throws Exception {
+		farm = new Farm();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test()
 	public void testFarm() {
-		fail("Not yet implemented");
+		
 	}
 
-	@Test
+	@Test()
 	public void testGetFarm() {
-		fail("Not yet implemented");
+		assertNotNull(farm);
+		for (int i = 0; i < farm.getFarm().length; ++i) {
+			for (Space s: farm.getFarm()[i]) {
+					assertNotNull(s);
+			}
+		}
 	}
 
 }

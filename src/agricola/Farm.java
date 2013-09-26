@@ -4,7 +4,7 @@ public class Farm {
 	
 	private Space[][] farm;
 	
-    Farm(){	
+    public Farm(){	
     	farm = new Space[7][11];
  
     	
