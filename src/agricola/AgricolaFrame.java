@@ -55,7 +55,7 @@ public class AgricolaFrame extends Frame {
     /**
      * Shutdown procedure when run as an application.
      */
-    protected void windowClosed() {
+    public void windowClosed() {
     	
     	// TODO: Check if it is safe to close the application
     	

@@ -6,8 +6,8 @@ import java.awt.*;
 @SuppressWarnings("serial")
 public class FarmPanel extends JPanel {
 	
-	private JButton[][] b;
-	private Farm s;
+	public JButton[][] b;
+	public Farm s;
 	
 	public FarmPanel(Farm stadium){
 		s=stadium;

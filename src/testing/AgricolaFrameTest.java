@@ -8,8 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import agricola.AgricolaFrame;
+
 public class AgricolaFrameTest {
 
+	private static AgricolaFrame agricolaFrame;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -20,6 +24,7 @@ public class AgricolaFrameTest {
 
 	@Before
 	public void setUp() throws Exception {
+		agricolaFrame = new AgricolaFrame();
 	}
 
 	@After
@@ -27,8 +32,8 @@ public class AgricolaFrameTest {
 	}
 
 	@Test
-	public void testAgricolaFrame() {
-		fail("Not yet implemented");
+	public void doNothing() {
+		assertEquals(0, agricolaFrame.getComponentCount());
 	}
 
 }

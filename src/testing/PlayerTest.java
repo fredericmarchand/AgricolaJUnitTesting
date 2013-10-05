@@ -61,6 +61,7 @@ public class PlayerTest {
 
 	@Test
 	public void testCalcScore() {
+		System.out.println(player.getScore());
 		int expectedScore = 11;
 		/* Setting values for resources that will generate a score */
 		player.addGrain();

@@ -7,24 +7,23 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class FarmView extends JFrame{
 
-	private FarmPanel panel_farm;
-	private JButton[] buttons;
-	private JButton[] buttons3;
-	private JButton[] buttons4;
-	private JButton[] buttons5;
-	private JMenuBar menu;
-	private JMenu gmenu;
-	private ButtonGroup playergroup;
-	private JRadioButtonMenuItem player1, player2, player3, player4, player5;
+	public FarmPanel panel_farm;
+	public JButton[] buttons;
+	public JButton[] buttons3;
+	public JButton[] buttons4;
+	public JButton[] buttons5;
+	public JMenuBar menu;
+	public JMenu gmenu;
+	public ButtonGroup playergroup;
+	public JRadioButtonMenuItem player1, player2, player3, player4, player5;
 	
-	private Label r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14;
-	private Label label_food, label_reed, label_wood, label_clay, label_stone, label_grain, label_vege, l_harvest1, l_harvest2, l_harvest3, l_harvest4,
+	public Label r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14;
+	public Label label_food, label_reed, label_wood, label_clay, label_stone, label_grain, label_vege, l_harvest1, l_harvest2, l_harvest3, l_harvest4,
 	l_harvest5, l_harvest6, l_tfam, l_fam, l_turn, l_cur, l_star, l_sheep, l_boar, l_cattle;
-	private JTextField text_food, text_reed, text_wood, text_clay, text_stone, text_grain, text_vege, text_turn, t_cur, t_star, p_sheep, p_cattle, p_boar;
-	private JTextField t_wood, t_clay, t_reed, t_food, t_sheep, t_stone, t_boar, t_cattle, t_stone2, t_tfam, t_fam;
-	private JTextField t3_wood, t3_clay, t4_wood, t4_2wood, t4_clay, t4_food, t5_reed, t5_food, t5_clay, t5_wood;
-	@SuppressWarnings("unused")
-	private JButton b_room, b_start, b_grain, b_field, b_stable, b_day, b_3wood, b_clay, b_reed, b_food, b_improve, b_sow, b_fences, b_sheep, b_renov, b_growth, b_stone, b_boar, b_vege,
+	public JTextField text_food, text_reed, text_wood, text_clay, text_stone, text_grain, text_vege, text_turn, t_cur, t_star, p_sheep, p_cattle, p_boar;
+	public JTextField t_wood, t_clay, t_reed, t_food, t_sheep, t_stone, t_boar, t_cattle, t_stone2, t_tfam, t_fam;
+	public JTextField t3_wood, t3_clay, t4_wood, t4_2wood, t4_clay, t4_food, t5_reed, t5_food, t5_clay, t5_wood;
+	public JButton b_room, b_start, b_grain, b_field, b_stable, b_day, b_3wood, b_clay, b_reed, b_food, b_improve, b_sow, b_fences, b_sheep, b_renov, b_growth, b_stone, b_boar, b_vege,
 					b_stone2, b_cattle, b_fieldsow, b_growth2, b_renov2;
 	
 	public FarmView(){

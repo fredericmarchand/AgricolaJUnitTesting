@@ -2,12 +2,11 @@ package agricola;
 
 public class Player {
 	
-	@SuppressWarnings("unused")
-	private boolean human, hasChild;
-	private int food, reed, wood, clay, stone, grain, vege, family, rooms, activefam, sheep, cattle, boar, field, empty, pasture, stable, score;
-	private char roomtype;
-	private boolean hasOven;
-//	private farm
+	public boolean human, hasChild;
+	public int food, reed, wood, clay, stone, grain, vege, family, rooms, activefam, sheep, cattle, boar, field, empty, pasture, stable, score;
+	public char roomtype;
+	public boolean hasOven;
+//	public farm
 	
 	public Player(){
 		food=0;
