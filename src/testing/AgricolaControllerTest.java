@@ -1,7 +1,6 @@
 package testing;
 
 import static org.junit.Assert.*;
-import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -91,7 +90,10 @@ public class AgricolaControllerTest {
 		agricolaController.update(false);
 		/* Fields are supposed to be built orthogonally adjacent to one another after there has been a field built, 
 		 * clearly not the case here according to the coordinates [5][3] and [1][5] */
-		Assert.assertNotSame(agricolaController.view.panel_farm.getFarm()[5][3].getType(), agricolaController.view.panel_farm.getFarm()[1][5].getType());
+		/* If two non orthogonally adjacent fields are built then assert a failure */
+		if (agricolaController.view.panel_farm.getFarm()[5][3].getType() == agricolaController.view.panel_farm.getFarm()[1][5].getType()) {
+			assertFalse(true);
+		}
 	}
 
 	@Test
@@ -100,6 +102,17 @@ public class AgricolaControllerTest {
 		agricolaController.b_wood.doClick();
 		agricolaController.update(false);
 		assertEquals(2, agricolaController.players[0].getWood());
+	}
+	
+	@Test
+	public void testFeedFamilySinglePlayer() {
+		agricolaController = new AgricolaController(1);
+		agricolaController.players[0].food = 10;
+		for (int i = 0; i < 4; ++i) {
+			agricolaController.b_wood.doClick();
+			agricolaController.b_reed.doClick();
+		}
+		assertEquals(4, agricolaController.players[0].getFood());
 	}
 	
 }
