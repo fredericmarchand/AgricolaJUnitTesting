@@ -78,21 +78,20 @@ public class AgricolaControllerTest {
 	
 	@Test
 	public void testPlowField() {
+		agricolaController = new AgricolaController(1);
 		agricolaController.wField = true;
 		agricolaController.view.panel_farm.b[1][5].doClick();
-		agricolaController.update(false);
-		for (int i = 0; i < agricolaController.num_players; i++)
-			agricolaController.players[i].activefam = 0;
-		agricolaController.update(false);
-		agricolaController.cur_player = 0;
+		agricolaController.b_wood.doClick();
 		agricolaController.wField = true;
 		agricolaController.view.panel_farm.b[5][3].doClick();
-		agricolaController.update(false);
+		agricolaController.b_wood.doClick();
 		/* Fields are supposed to be built orthogonally adjacent to one another after there has been a field built, 
 		 * clearly not the case here according to the coordinates [5][3] and [1][5] */
 		/* If two non orthogonally adjacent fields are built then assert a failure */
 		if (agricolaController.view.panel_farm.getFarm()[5][3].getType() == agricolaController.view.panel_farm.getFarm()[1][5].getType()) {
-			assertFalse(true);
+			if (agricolaController.view.panel_farm.getButtons()[5][3].getBackground() == agricolaController.view.panel_farm.getButtons()[1][5].getBackground() &&
+					agricolaController.view.panel_farm.getButtons()[5][3].getBackground() != agricolaController.view.panel_farm.getButtons()[1][1].getBackground());
+				assertFalse(true);
 		}
 	}
 
